@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="./css/share.css">
+    <title>口袋小安</title>
+</head>
+<body>
+    <div class="container">
+        <!--头部-->
+        <div class="header">
+            <img src="./images/gb.png" alt="close" class="close">
+            <div class="title"></div>
+            <img src="./images/zt.png" alt="more" class="more">
+        </div>
+        <!--头像部分-->
+        <section class="part1">
+            <div class="background-cricle"></div>
+            <div class="photo">
+                <img alt="头像" class="person-photo">
+                <img src="./images/men.png" alt="男" class="gender pmale">
+                <img src="./images/women.png" alt="女" class="gender pfemale">
+            </div>
+        </section>
+        <!--分享动态部分-->
+        <section class="part2">
+            <div class="nickname"></div>
+            <div class="academy"></div>
+            <p class="share_content"></p>
+            <div class="banner">
+                <div class="fiximg imgbox imgbox1">
+                    <!-- <img src="./images/cs.jpg" alt="" class="img1"> -->
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer-time"></div>
+                <div class="footer-view">
+                    <sapn><img src="./images/view.png" alt=""><span class="num blogView"></span></sapn>
+                    <sapn><img src="./images/comment.png" alt=""><span class="num blogComment"></span></sapn>
+                    <sapn><img src="./images/like.png" alt=""><span class="num blogZan"></span></sapn>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="xian"></div>
+            <div class="comment">
+                <div class="top">
+                    <img alt="" class="pcomment">
+                    <div class="detail">
+                        <div class="del-top">
+                            <div class="del-name comName"></div>
+                            <img src="./images/female.png" alt="性别" class="pcfemale">
+                            <img src="./images/male.png" alt="性别" class="pcmale">
+                        </div>
+                        <div class="imformation">
+                            <span class="comTime"></span>
+                            <span class="comAcademy"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom comContent"></div>
+            </div>
+        </section>
+        <!--热门动态-->
+        <section class="part3">
+            <div class="hot-title">
+                <span class="red-line"></span>
+                <span class="hot-title-font">热门动态</span>
+            </div>
+            <div class="xian"></div>
+            <div class="top" style="margin-top: 15px;margin-bottom: 19.5px;">
+                <img alt="" class="hotImage">
+                <div class="detail">
+                    <div class="del-top">
+                        <div class="del-name hotname"></div>
+                        <img src="./images/female.png" alt="性别" class="hotfemale">
+                        <img src="./images/male.png" alt="性别" class="hotmale">
+                    </div>
+                    <div class="imformation">
+                        <span class="hottime"></span>
+                        <span class="hotacademy"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-content"></div>
+            <div class="hot-imgbox hot-imgbox1 fixhotimg">
+    
+            </div>
+            <div class="footer">
+                <div class="footer-view">
+                    <sapn><img src="./images/view.png" alt=""><span class="num hotBlogView"></span></sapn>
+                    <sapn><img src="./images/comment.png" alt=""><span class="num hotCommentCount"></span></sapn>
+                    <sapn><img src="./images/like.png" alt=""><span class="num hotLike"></span></sapn>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="xian"></div>
+            <div class="hot-comment">
+                <div class="hot-comment-title">最新评论</div>
+                <div class="top">
+                    <img alt="" class="hotcomment">
+                    <div class="detail">
+                        <div class="del-top">
+                            <div class="del-name hotcomName"></div>
+                            <img src="./images/female.png" alt="性别" class="hotfemale">
+                            <img src="./images/male.png" alt="性别" class="hotmale">
+                        </div>
+                        <div class="imformation">
+                            <span class="hotcomTime"></span>
+                            <span class="hotcomAcademy"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom hotcomContent"></div>
+            </div>
+        </section>
+        <!--状态提示-->
+        <section class="part4">大家都在讨论</section>
+        <!--话题部分-->
+        <section class="part5">
+            <div class="topic-title">#话题#:&#x3000;<span class="hottopic"></span></div>
+            <img alt="" class="topic-img">
+        </section>
+
+        <!--这是一个浮动遮罩层-->
+        <div class="mask-container">
+        <div class="mask">
+            <img alt="logo" id="appUrl">
+            <div class="mask-content">
+                <div id="appName"></div>
+            </div>
+            <button class="appButton">查看更多</button>
+        </div>
+        </div>
+    </div>
+    <script src="./js/jquery-2.1.3.min.js"></script>
+    <script>
+        var hashjs = './js/share.js' + '?' + Math.random();
+        new_element=document.createElement("script");
+        new_element.setAttribute("type","text/javascript");
+        new_element.setAttribute("src",hashjs);
+        document.body.appendChild(new_element);
+    </script>
+    <!-- <script src="./js/share.js"></script> -->
+    <script src="./js/animation.js"></script>
+</body>
+</html>

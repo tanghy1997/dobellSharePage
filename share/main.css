@@ -1,0 +1,267 @@
+li{
+	list-style-type: none;
+}
+html{
+	font-family: "微软雅黑";
+}
+*{
+	margin: 0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+#wraper{
+	width: 100%;
+	height: auto;
+	min-height: 1px;
+}
+.banner{
+	text-align: center;
+	background-color: #30a3ce;
+	color: #fff;
+	line-height: 40px;
+	height: 40px;
+	font-weight: 500;
+	font-family: "微软雅黑";
+}
+#header{
+	width: 100%;
+	height: auto;
+	padding: 10px 10px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+.header_name{
+	color: #636363;
+	font-size: 16px;
+}
+.header_time{
+	color: #f9cc5f;
+	font-size: 14px;
+}
+#header_img{
+	width: 40px;
+	height: 40px;
+	border:1px solid #fff;
+	border-radius: 50%;
+	float: left;
+}
+#header_img img{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+.header_message{
+	float: left;
+	margin-left: 6px;
+}
+.landlord{
+	color: #73c3ea;
+}
+/**************************
+	content评论
+***************************/
+#content{
+	width: 100%;
+	padding: 0 10px;
+	padding-bottom: 10px;
+	height: auto;
+	border-bottom: 1px solid #ccc;
+}
+#content p{
+	line-height: 18px;
+	word-wrap:break-word;
+	height: auto;
+	width: 90%;
+	padding-bottom: 10px;
+}
+.content_img{
+	width: 40%;
+	overflow: hidden;
+}
+.content_img img{
+	width: 33.3%;
+	vertical-align: top;
+	display: block;
+	float: left;
+	box-sizing: border-box;
+}
+/************************
+	download
+************************/
+.download{
+	width: 100%;
+	height: 40px;
+	background-color: #fcfcfc;
+	overflow: hidden;
+	border-bottom: 1px solid #ccc;
+	box-shadow: 0 2px 10px #ccc;
+	margin-bottom: 20px;
+}
+.download a{
+	text-align: center;
+	text-decoration: none;
+	width: 33.3333%;
+	color: #bfbfbf;
+	display: block;
+	float: left;
+	line-height: 40px;
+	
+}
+.download img{
+	width: 24px;
+	display: block;
+	margin-top: 10px;
+	margin-left: 28px; 
+	float: left;
+}
+/**************************
+	comment评论
+***************************/
+#comment{
+	width: 100%;
+	padding:0 10px;
+}
+
+.comment_header{
+	overflow: hidden;
+}
+.comment_header_img{
+	float: left;
+}
+.comment_header_img img{
+	width: 40px;
+	height: 40px;
+	border:1px solid #fff;
+	border-radius: 50%;
+}
+.comment_header_name{
+	float: left;
+	padding-top:10px; 
+	padding-left: 4px;
+	color: #636363;
+	font-size: 16px;
+}
+#comment p{
+	margin-left: 44px;
+	padding-bottom:10px; 
+	border-bottom: 1px solid #ccc;
+}
+/****************************
+	downapp
+*****************************/
+.downapp{
+	width: 100%;
+	position: fixed;
+	height: 60px;
+	background:rgba(0, 0, 0, 0.5);
+	bottom: 0;
+}
+.downapp img{
+	width: 40px;
+	height: 40px;
+	border-radius: 4px;
+	margin-top: 10px;
+	float: left;
+	margin-left: 10px;
+	-webkit-animation: swing 1s ease infinite alternate;
+	   -moz-animation: swing 1s ease infinite alternate;
+	    -ms-animation: swing 1s ease infinite alternate;
+	     -o-animation: swing 1s ease infinite alternate;
+	        animation: swing 1s ease infinite alternate;
+}
+.downapp p{
+	line-height: 60px;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	color: #fff;
+	float: left;
+	width: 200px;
+}
+#disable{
+	position: absolute;
+	top: -22px;
+	right: 10px;
+	width: 24px;
+	height: 24px;
+	background:rgba(0,0,0,.1);
+	border-radius: 50%;
+	color: #fff;
+}
+/**************************************
+animation
+***************************************/
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+/******************************
+	mask
+********************************/
+#mask{
+	background: rgba(0,0,0,.5);
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	display: none;
+}
+.mask_img{
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	display: block;
+}
+/************************************
+	download
+************************************/

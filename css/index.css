@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /*设置h5页面不可复制文字、图片*/
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.background{
+    width: 100%;
+    position: absolute;
+}
+.photo{
+    width:8.875rem;
+    height:8.875rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 10.19%;
+    left: calc(50% - 4.5rem);
+}
+
+.title{
+    width: 100%;
+    font-family: 'PingFangSC-Semibold';
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFFFFF;
+    text-align: center;
+    position: absolute;
+    line-height: 49px;
+    top: 16rem;
+}
+
+.p{
+    width: 100%;
+    font-family: 'PingFangSC-Regular';
+    font-weight: normal;
+    color: rgba(255,255,255,0.5);
+    padding: 0 1.03rem 0 1.03rem;
+    position: absolute;
+    top: 20.09rem;
+    text-align: justify;
+    -ms-word-break: break-all;
+    word-break: break-all;
+}
+
+.button{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 26.4rem;
+}
+
+.button button{
+    width: 12.5rem;
+    height: 2.75rem;
+    border: 1px solid #FFFFFF;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 22px;
+    color: #FFFFFF;
+    font-family: 'PingFangSC-Regular';
+    font-size: 15px;
+}
