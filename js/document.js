@@ -35,7 +35,7 @@ if(type == 1){
         schoolName + "的你，还没有使用自己的校园APP吗?",
     ];
     const num1 =  Math.ceil(Math.random()*3)
-    $('.p').text(str[num1 - 1])
+    $('.p').text(str1[num1 - 1])
 } else if(type == 5) {
     const str2 = [
         "这里是"+ schoolName +"自己的校园APP，为你带来最新的\"图书馆/成绩/浴室\"消息,轻松做学霸,奖学金悄咪咪脱单,点击下载,体验从这一秒开始！",
@@ -43,7 +43,7 @@ if(type == 1){
         "查教室、查课表、查成绩、查排名,听说还能找对象、赚礼品、听八卦,全校卧谈夜聊,芥末刺激！！！"
     ];
     const num2 =  Math.ceil(Math.random()*3)
-    $('.p').text(str[num2 - 1])
+    $('.p').text(str2[num2 - 1])
 }
 
 
