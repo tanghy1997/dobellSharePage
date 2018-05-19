@@ -15,7 +15,7 @@
             <img src="./images/background.png" alt="背景图" class="background">
             <img src="" class="photo"></img>
             <div class="title">特别的服务给特别的你</div>
-            <div class="p">这里是【学校】人自己的APP，为你带来最新的“图书馆/成绩/浴室”消息，轻松做学霸，奖学金悄咪咪脱单······</div>
+            <div class="p"></div>
             <div class="button">
             <button id="button">立即体验</button>
             </div>
@@ -26,13 +26,10 @@
             getUrl();
             var baseUrl =  decodeURI(location.pathname).replace('index','share');
             var hash = baseUrl + decodeURI(location.search);
-            console.log(baseUrl)
-            console.log(decodeURI(location.search))
-            console.log(hash)
-            console.log(123)
             $('#button').click(function(){
                 window.location.href = hash
             })
         </script>
+        <script src="js/document.js"></script>
 </body>
 </html>
