@@ -81,9 +81,9 @@ function getBlogs() {
             }
         } else if(imgArray.length = 1) {
             //判断是否首次加载来解决图片缓存问题
-            if(!window.name){
+            if(!sessionStorage.name){
                 var onlyimgUrl = imgArray[0].imageUrl;
-                window.name = 'share';
+                sessionStorage.name = 'share';
                 sessionStorage.onlyimgUrl = onlyimgUrl;
             }else{
                 console.log('刷新操作')
@@ -169,6 +169,7 @@ function getHotBlogs() {
         const hotzanCount = data.data.zanCount;
         const hottime = getLocalTime(data.data.createtime);
         const hotimgArray = data.data.imageList;
+        console.log(hotimgArray)
 
         $('.hotImage').attr('src',hotheadImg);
         $('.hotname').text(hotnickName);
@@ -194,8 +195,9 @@ function getHotBlogs() {
                 $('.fixhotimg').find('img').addClass('img2')
             }
         } else if(hotimgArray.length = 1) {
-            if(!window.name){
+            if(!sessionStorage.name1){
                 var onlyimgUrl1 = hotimgArray[0].imageUrl;
+                sessionStorage.name1 = 'share1';
                 sessionStorage.onlyimgUrl1 = onlyimgUrl1;
             }else{
                 console.log('刷新操作')
@@ -206,6 +208,7 @@ function getHotBlogs() {
             // 创建对象
             var img1 = new Image();
             // 改变图片的src
+            console.log(sessionStorage.onlyimgUrl1)
             img1.src == sessionStorage.onlyimgUrl1;
             // 开始比较并且定宽定高 图片宽度大于视口宽度定宽100%
             if(img1.width < windowWidth1) {
