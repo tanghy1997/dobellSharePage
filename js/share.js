@@ -234,20 +234,20 @@ function getHotBlogs() {
         } else if(hotimgArray.length === 2) {
             $('.fixhotimg').removeClass('hot-imgbox');
             $('.fixhotimg').removeClass('hot-imgbox1');
-            for(let i = 0;i<imgArray.length;i++){
-                $('.fixhotimg').append("<img src="+ imgArray[i].imageUrl +" />");
+            for(let i = 0;i<hotimgArray.length;i++){
+                $('.fixhotimg').append("<img src="+ hotimgArray[i].imageUrl +" />");
                 $('.fixhotimg').find('img').addClass('img4')
             }
         } else if(hotimgArray.length === 4) {
             $('.fixhotimg').removeClass('hot-imgbox');
             $('.fixhotimg').removeClass('hot-imgbox1');
-            for(let i = 0;i<imgArray.length;i++){
-                $('.fixhotimg').append("<img src="+ imgArray[i].imageUrl +" />");
+            for(let i = 0;i<hotimgArray.length;i++){
+                $('.fixhotimg').append("<img src="+ hotimgArray[i].imageUrl +" />");
                 $('.fixhotimg').find('img').addClass('img4')
             }
         } else {
             $('.fixhotimg').removeClass('hot-imgbox');
-            $('.fixhotimg').removeClass('hot-imgbox2');
+            $('.fixhotimg').removeClass('hot-imgbox');
             for(let i = 0;i<hotimgArray.length;i++){
                 $('.fixhotimg').append("<img src="+ hotimgArray[i].imageUrl +" />");
                 $('.fixhotimg').find('img').addClass('img2')
