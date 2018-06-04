@@ -73,13 +73,7 @@ function getBlogs() {
         $('.blogZan').text(zanCount);
         // 对图片的处理
         // 首先判断图片数是否大于1，大于1的话判断是否是定高还是定宽
-        if(imgArray.length > 1) {
-            $('.fiximg').removeClass('imgbox');
-            for(let i = 0;i<imgArray.length;i++){
-                $('.fiximg').append("<img src="+ imgArray[i].imageUrl +" />");
-                $('.fiximg').find('img').addClass('img2')
-            }
-        } else if(imgArray.length = 1) {
+        if(imgArray.length === 1) {
             //判断是否首次加载来解决图片缓存问题
             if(!sessionStorage.name){
                 var onlyimgUrl = imgArray[0].imageUrl;
@@ -107,8 +101,28 @@ function getBlogs() {
                 $('.fiximg').append("<img src="+ sessionStorage.onlyimgUrl +" />");
                 $('.fiximg').find('img').addClass('img1');
             }
+        } else if(imgArray.length === 2) {
+            $('.fiximg').removeClass('imgbox');
+            $('.fiximg').removeClass('imgbox1');
+            for(let i = 0;i<imgArray.length;i++){
+                $('.fiximg').append("<img src="+ imgArray[i].imageUrl +" />");
+                $('.fiximg').find('img').addClass('img4')
+            }
+        } else if(imgArray.length === 4) {
+            $('.fiximg').removeClass('imgbox');
+            $('.fiximg').removeClass('imgbox1');
+            for(let i = 0;i<imgArray.length;i++){
+                $('.fiximg').append("<img src="+ imgArray[i].imageUrl +" />");
+                $('.fiximg').find('img').addClass('img4')
+            }
+        } else {
+            $('.fiximg').removeClass('imgbox');
+            $('.fiximg').removeClass('imgbox2');
+            for(let i = 0;i<imgArray.length;i++){
+                $('.fiximg').append("<img src="+ imgArray[i].imageUrl +" />");
+                $('.fiximg').find('img').addClass('img2')
+            }
         }
-        
     }).fail(function() {
         console.log("error");
     }).always(function() {
@@ -123,29 +137,34 @@ function getBlogs() {
             data: {uid:10078,blogId:id,lastId:0,objCount:1}
         }).done(function(data) {
             data = JSON.parse(data);
-            const comment = data.data[0];
-            const comUrl = comment.author.headImage.imageUrl;
-            const comName = comment.author.nickName;
-            const comTime = getLocalTime(comment.createtime);
-            const comAcademy = comment.author.depName;
-            const comSex = comment.author.sex;
-            const comContent = JSON.parse(comment.content).string ;
-
-            $('.pcomment').attr('src', comUrl);
-            $('.comName').text(comName);
-            if(comSex === '男'){
-                $('.pcmale').css('display','inline-block');
-                $('.pcfemale').css('display','none');
-            }else if(comSex === '女'){
-                $('.pcfemale').css('display','inline-block');
-                $('.pcmale').css('display','none');
-            }else {
-                $('.pcfemale').css('display','none');
-                $('.pcmale').css('display','none');
+            if(data.data.length === 0) {
+                $('.comment').css({
+                    display: 'none'
+                })
+            } else {
+                const comment = data.data[0];
+                const comUrl = comment.author.headImage.imageUrl;
+                const comName = comment.author.nickName;
+                const comTime = getLocalTime(comment.createtime);
+                const comAcademy = comment.author.depName;
+                const comSex = comment.author.sex;
+                const comContent = JSON.parse(comment.content).string ;
+                $('.pcomment').attr('src', comUrl);
+                $('.comName').text(comName);
+                if(comSex === '男'){
+                    $('.pcmale').css('display','inline-block');
+                    $('.pcfemale').css('display','none');
+                }else if(comSex === '女'){
+                    $('.pcfemale').css('display','inline-block');
+                    $('.pcmale').css('display','none');
+                }else {
+                    $('.pcfemale').css('display','none');
+                    $('.pcmale').css('display','none');
+                }
+                $('.comTime').text(comTime);
+                $('.comAcademy').text(comAcademy);
+                $('.comContent').text(comContent);
             }
-            $('.comTime').text(comTime);
-            $('.comAcademy').text(comAcademy);
-            $('.comContent').text(comContent);
         })
     }
 }
@@ -188,13 +207,7 @@ function getHotBlogs() {
         $('.hot-content').text(hotcontent.replace(/\[e\][0-9]{4}\[\/e\]/g,""));
         // 对图片的处理
         // 首先判断图片数是否大于1，大于1的话判断是否是定高还是定宽
-        if(hotimgArray.length > 1) {
-            $('.fixhotimg').removeClass('hot-imgbox');
-            for(let i = 0;i<hotimgArray.length;i++){
-                $('.fixhotimg').append("<img src="+ hotimgArray[i].imageUrl +" />");
-                $('.fixhotimg').find('img').addClass('img2')
-            }
-        } else if(hotimgArray.length = 1) {
+        if(hotimgArray.length === 1) {
             if(!sessionStorage.name1){
                 var onlyimgUrl1 = hotimgArray[0].imageUrl;
                 sessionStorage.name1 = 'share1';
@@ -218,7 +231,28 @@ function getHotBlogs() {
                 $('.fixhotimg').append("<img src="+ sessionStorage.onlyimgUrl1 +" />");
                 $('.fixhotimg').find('img').addClass('img1');
             }
-        }
+        } else if(hotimgArray.length === 2) {
+            $('.fixhotimg').removeClass('hot-imgbox');
+            $('.fixhotimg').removeClass('hot-imgbox1');
+            for(let i = 0;i<imgArray.length;i++){
+                $('.fixhotimg').append("<img src="+ imgArray[i].imageUrl +" />");
+                $('.fixhotimg').find('img').addClass('img4')
+            }
+        } else if(hotimgArray.length === 4) {
+            $('.fixhotimg').removeClass('hot-imgbox');
+            $('.fixhotimg').removeClass('hot-imgbox1');
+            for(let i = 0;i<imgArray.length;i++){
+                $('.fixhotimg').append("<img src="+ imgArray[i].imageUrl +" />");
+                $('.fixhotimg').find('img').addClass('img4')
+            }
+        } else {
+            $('.fixhotimg').removeClass('hot-imgbox');
+            $('.fixhotimg').removeClass('hot-imgbox2');
+            for(let i = 0;i<hotimgArray.length;i++){
+                $('.fixhotimg').append("<img src="+ hotimgArray[i].imageUrl +" />");
+                $('.fixhotimg').find('img').addClass('img2')
+            }
+        };
         $('.hotBlogView').text(hotviewCount);
         $('.hotCommentCount').text(hotcommentCount);
         $('.hotLike').text(hotzanCount);
@@ -236,29 +270,35 @@ function getHotBlogs() {
             data: {uid:10078,blogId:id,lastId:0,objCount:1}
         }).done(data => {
             data = JSON.parse(data);
-            const hotcomment = data.data[0];
-            const hotcomUrl = hotcomment.author.headImage.imageUrl;
-            const hotcomName = hotcomment.author.nickName;
-            const hotcomTime = getLocalTime(hotcomment.createtime);
-            const hotcomAcademy = hotcomment.author.depName;
-            const hotcomSex = hotcomment.author.sex;
-            const hotcomContent = JSON.parse(hotcomment.content).string ;
-            $('.hotcomment').attr('src',hotcomUrl);
-            $('.hotcomName').text(hotcomName);
-            if(hotcomSex === '男'){
-                $('.hotmale').css('display','inline-block');
-                $('.hotfemale').css('display','none');
-            }else if(hotcomSex === '女'){
-                $('.hotfemale').css('display','inline-block');
-                $('.hotmale').css('display','none');
-            }else {
-                $('.hotfemale').css('display','none');
-                $('.hotmale').css('display','none');
-            }
-            $('.hotcomTime').text(hotcomTime);
-            $('.hotcomAcademy').text(hotcomAcademy);
-            $('.hotcomContent').text(hotcomContent);
-            $('.hottopic').text(param.hotTopicName);
+            if(data.data.length === 0) {
+                $('.comment').css({
+                    display: 'none'
+                })
+            } else {
+                const hotcomment = data.data[0];
+                const hotcomUrl = hotcomment.author.headImage.imageUrl;
+                const hotcomName = hotcomment.author.nickName;
+                const hotcomTime = getLocalTime(hotcomment.createtime);
+                const hotcomAcademy = hotcomment.author.depName;
+                const hotcomSex = hotcomment.author.sex;
+                const hotcomContent = JSON.parse(hotcomment.content).string ;
+                $('.hotcomment').attr('src',hotcomUrl);
+                $('.hotcomName').text(hotcomName);
+                if(hotcomSex === '男'){
+                    $('.hotmale').css('display','inline-block');
+                    $('.hotfemale').css('display','none');
+                }else if(hotcomSex === '女'){
+                    $('.hotfemale').css('display','inline-block');
+                    $('.hotmale').css('display','none');
+                }else {
+                    $('.hotfemale').css('display','none');
+                    $('.hotmale').css('display','none');
+                }
+                $('.hotcomTime').text(hotcomTime);
+                $('.hotcomAcademy').text(hotcomAcademy);
+                $('.hotcomContent').text(hotcomContent);
+                $('.hottopic').text(param.hotTopicName);
+                }
         })
      }
 }
