@@ -140,7 +140,10 @@ function getBlogs() {
             if(data.data.length === 0) {
                 $('.comment').css({
                     display: 'none'
-                })
+                });
+                $('.noContent').css({
+                    display: 'block'
+                });
             } else {
                 const comment = data.data[0];
                 const comUrl = comment.author.headImage.imageUrl;
@@ -271,9 +274,12 @@ function getHotBlogs() {
         }).done(data => {
             data = JSON.parse(data);
             if(data.data.length === 0) {
-                $('.comment').css({
+                $('.hot-comment').css({
                     display: 'none'
-                })
+                });
+                $('.noHotContent').css({
+                    display: 'block'
+                });
             } else {
                 const hotcomment = data.data[0];
                 const hotcomUrl = hotcomment.author.headImage.imageUrl;

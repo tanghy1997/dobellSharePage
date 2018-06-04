@@ -374,3 +374,15 @@ html,body{
     top: 22.5px;
     right: 16px;
 }
+
+/*  */
+.noHotContent{
+    display: none;
+    font-size: 14px;
+    padding: 10px 0;
+}
+.noContent{
+    display: none;
+    font-size: 14px;
+    padding: 10px 0;
+}
