@@ -18,8 +18,9 @@ var getUrl = function () {
         getPhoto(Id)
     }else if(type === '4'){
         var id = url.split("id=");
-        id = id[1].toString();
-        window.location.href = id;
+        var id1 = id[1].split("&userId=")
+        id1 = id1[0].toString();
+        window.location.href = id1;
     }else {
         function GetRequest() {
             var url1 = decodeURI(location.search);
