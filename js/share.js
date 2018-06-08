@@ -16,7 +16,7 @@ var param = GetRequest();
 const appUrl = param.appLogoUrl;
 const appName = param.appName;
 // 用来判断对象是否为空
-if(param.type == 1){
+if(param.type === '1'){
     getBlogs();
     $('.appButton').click(function() {
         location.href = param.homePageUrl;
@@ -34,13 +34,16 @@ function getBlogs() {
         data: {uid:10078,blogId:param.id}
     }).done(function(data){
         // 全局正则表达式来去掉一些分享时的表情
+        data = data.replace(/\\n/g,"");
+        data = data.replace(/\[e\][0-9]{4}\[\/e\]/g,"");
+        data = data.replace(/\\u[0-9]{4}/g,"");
         data = JSON.parse(data);
-        // console.log(data)
         const nickName = data.data.author.nickName;
         const depName = data.data.author.depName;
         const sex = data.data.author.sex;
         const headImg = data.data.author.headImage.imageUrl;
         const content = JSON.parse(data.data.content).string;
+        // console
         const viewCount = data.data.browseCount;
         const commentCount = data.data.commentCount;
         const zanCount = data.data.zanCount;
@@ -56,7 +59,7 @@ function getBlogs() {
         $('.nickname').text(nickName);
         $('.academy').text(depName);
         //replace(/\[e\][0-9]{4}\[\/e\]/g,"")正则去掉表情标签
-        $('.share_content').text(content.replace(/\[e\][0-9]{4}\[\/e\]/g,""));
+        $('.share_content').text(content);
         if(sex === '男'){
             $('.pmale').css('display','inline-block');
             $('.pfemale').css('display','none');
@@ -91,7 +94,7 @@ function getBlogs() {
             const img = new Image();
             // 改变图片的src
             img.src == sessionStorage.onlyimgUrl;
-            console.log(sessionStorage.onlyimgUrl)
+            // console.log(sessionStorage.onlyimgUrl)
             // console.log(img.width)
             // 开始比较并且定宽定高 图片宽度大于视口宽度定宽100%
             if(img.width < windowWidth) {
@@ -180,6 +183,9 @@ function getHotBlogs() {
         dateType:'text/plain',
         data: {uid:10078,blogId:param.hotBlogId}
     }).done(data => {
+        data = data.replace(/\\n/g,"");
+        data = data.replace(/\[e\][0-9]{4}\[\/e\]/g,"");
+        data = data.replace(/\\u[0-9]{4}/g,"");
         data = JSON.parse(data);
         const hotnickName = data.data.author.nickName;
         const hotdepName = data.data.author.depName;
@@ -191,7 +197,7 @@ function getHotBlogs() {
         const hotzanCount = data.data.zanCount;
         const hottime = getLocalTime(data.data.createtime);
         const hotimgArray = data.data.imageList;
-        console.log(hotimgArray)
+        // console.log(hotimgArray)
 
         $('.hotImage').attr('src',hotheadImg);
         $('.hotname').text(hotnickName);
@@ -207,7 +213,7 @@ function getHotBlogs() {
         }
         $('.hottime').text(hottime);
         $('.hotacademy').text(hotdepName);
-        $('.hot-content').text(hotcontent.replace(/\[e\][0-9]{4}\[\/e\]/g,""));
+        $('.hot-content').text(hotcontent);
         // 对图片的处理
         // 首先判断图片数是否大于1，大于1的话判断是否是定高还是定宽
         if(hotimgArray.length === 1) {
@@ -224,7 +230,7 @@ function getHotBlogs() {
             // 创建对象
             var img1 = new Image();
             // 改变图片的src
-            console.log(sessionStorage.onlyimgUrl1)
+            // console.log(sessionStorage.onlyimgUrl1)
             img1.src == sessionStorage.onlyimgUrl1;
             // 开始比较并且定宽定高 图片宽度大于视口宽度定宽100%
             if(img1.width < windowWidth1) {
