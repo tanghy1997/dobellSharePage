@@ -34,15 +34,21 @@ function getBlogs() {
         data: {uid:10078,blogId:param.id}
     }).done(function(data){
         // 全局正则表达式来去掉一些分享时的表情
-        data = data.replace(/\\n/g,"");
+        // data = data.replace(/\\n/g,"");
+        // console.log(data)
         data = data.replace(/\[e\][0-9]{4}\[\/e\]/g,"");
         data = data.replace(/\\u[0-9]{4}/g,"");
         data = JSON.parse(data);
+        c = data.data.content
+        c = c.replace(/\\n/g,'').replace(/\n/g,'')
         const nickName = data.data.author.nickName;
         const depName = data.data.author.depName;
         const sex = data.data.author.sex;
         const headImg = data.data.author.headImage.imageUrl;
-        const content = JSON.parse(data.data.content).string;
+        const cData = data.data.content;
+        // console.log(cData.split('":"'))
+        // console.log(cData.split('":"')[1].split('"}'))
+        const content = JSON.parse(c).string //c.split('":"')[1].split('"}');
         // console
         const viewCount = data.data.browseCount;
         const commentCount = data.data.commentCount;
@@ -183,15 +189,17 @@ function getHotBlogs() {
         dateType:'text/plain',
         data: {uid:10078,blogId:param.hotBlogId}
     }).done(data => {
-        data = data.replace(/\\n/g,"");
+        // data = data.replace(/\\n/g,"");
         data = data.replace(/\[e\][0-9]{4}\[\/e\]/g,"");
         data = data.replace(/\\u[0-9]{4}/g,"");
         data = JSON.parse(data);
+        ch = data.data.content
+        ch = ch.replace(/\\n/g,'').replace(/\n/g,'')
         const hotnickName = data.data.author.nickName;
         const hotdepName = data.data.author.depName;
         const hotsex = data.data.author.sex;
         const hotheadImg = data.data.author.headImage.imageUrl;
-        const hotcontent = JSON.parse(data.data.content).string;
+        const hotcontent = JSON.parse(ch).string;
         const hotviewCount = data.data.browseCount;
         const hotcommentCount = data.data.commentCount;
         const hotzanCount = data.data.zanCount;
